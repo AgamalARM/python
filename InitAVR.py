@@ -9,12 +9,18 @@ myfile = open("InitAVR.c" , "w")
 i = int(0)
 port = list()
 while i < 8 :
-    x = input("Please Enter Bit "+str(i)+" mode : ")
-    if x == "input":
-        port.append(0)
+    while True :
+        x = input("Please Enter Bit "+str(i)+" mode : ")
+        x = x.lower()
+        if x == "input":
+            port.append(0)
+            break
         
-    else :
-        port.append(1)
+        elif x == "output":
+            port.append(1)
+            break
+        else  :
+            print("Wrong Bit Mode ,Please Try again")
         
     i = i + 1
 print(port)
